@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV – Rifky Alexa Yoland</title>
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--acc:#0079f9;--ink:#fff;--paper:#000;--mute:#c9d1dc;--line:rgba(255,255,255,.2);--glass:rgba(0,0,0,.55);--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.6 'Newsreader',Georgia,serif;background:#000;color:var(--ink);overflow-x:hidden}
+h1,h2,h3,.ui{font-family:'Bricolage Grotesque',system-ui,sans-serif}
+/* LATAR VIDEO */
+#bgv{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;z-index:-2}
+#bgov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:-1}
+section{min-height:100vh;padding:min(14vh,120px) min(8vw,100px);display:flex;flex-direction:column;justify-content:center;position:relative}
+h2{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;letter-spacing:-.02em;margin-bottom:2rem;line-height:1.05}
+.wrap{max-width:1000px;width:100%;margin:0 auto}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;gap:.3rem;padding:.8rem min(4vw,40px);align-items:center;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav b{margin-right:auto;font-weight:800;display:flex;align-items:center;gap:.6rem}
+.logo-nav{height:34px;width:auto}
+.logo-hero{height:84px;width:auto;margin-top:1.4rem;background:#fff;border-radius:14px;padding:6px 8px;animation:fade 1s .4s both}
+.logo-hero+p{margin-top:.8rem}
+nav a{font:600 .85rem 'Bricolage Grotesque';color:var(--mute);text-decoration:none;padding:.35rem .7rem;border-radius:99px;transition:.3s var(--ease)}
+nav a:hover,nav a.on{background:var(--acc);color:#fff}
+@media(max-width:760px){nav a:not(.keep){display:none}}
+/* TIRAI transisi antar-bagian */
+#curtain{position:fixed;inset:0;background:var(--acc);z-index:90;transform:translateY(100%);pointer-events:none}
+#curtain.go{animation:wipe .9s var(--ease)}
+@keyframes wipe{0%{transform:translateY(100%)}45%,55%{transform:translateY(0)}100%{transform:translateY(-100%)}}
+/* HERO */
+#hero{flex-direction:row;align-items:center;gap:3rem;flex-wrap:wrap;justify-content:center}
+.photo{width:min(340px,70vw);aspect-ratio:3/4;border-radius:200px 200px 24px 24px;overflow:hidden;background:#0003;animation:rise 1.2s var(--ease) both;position:relative}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes rise{from{clip-path:inset(100% 0 0 0);transform:scale(1.1)}to{clip-path:inset(0);transform:none}}
+.hero-t h1{font-size:clamp(2.6rem,7.5vw,5.5rem);font-weight:800;line-height:.95;letter-spacing:-.03em}
+.hero-t h1 span{display:block;overflow:hidden}
+.hero-t h1 i{display:block;font-style:normal;animation:up 1s var(--ease) both}
+.hero-t h1 span:nth-child(2) i{animation-delay:.15s}
+@keyframes up{from{transform:translateY(110%)}to{transform:none}}
+.hero-t p{margin-top:1.2rem;font-size:1.3rem;animation:fade 1s .5s both}
+.btns{margin-top:1.6rem;display:flex;gap:.7rem;flex-wrap:wrap;animation:fade 1s .7s both}
+@keyframes fade{from{opacity:0}}
+.btn{font:600 .95rem 'Bricolage Grotesque';padding:.7rem 1.3rem;border-radius:99px;border:2px solid #fff;color:#fff;background:none;text-decoration:none;cursor:pointer;transition:.3s var(--ease)}
+.btn:hover{background:#fff;color:var(--acc);transform:translateY(-3px)}
+/* REVEAL */
+.rv{opacity:0;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.l{transform:translateX(-70px)}.rv.r{transform:translateX(70px)}.rv.u{transform:translateY(60px)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+/* TIMELINE */
+.tl{border-left:3px solid var(--acc);padding-left:2rem;display:grid;gap:2.2rem}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;left:calc(-2rem - 9px);top:.45rem;width:15px;height:15px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px #000;transition:.4s var(--ease);transform:scale(0)}
+.tl article.in::before{transform:scale(1)}
+.tl h3{font-size:1.3rem}.tl small{color:var(--acc);font:600 .9rem 'Bricolage Grotesque'}
+.tl p{color:var(--mute)}
+/* GAYA: gambar + kolom keterangan */
+.slot{border-radius:16px;overflow:hidden;background:var(--glass);position:relative}
+.slot img{width:100%;display:block;transition:transform .8s var(--ease)}
+.slot:hover img{transform:scale(1.04)}
+.gitem{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;margin-bottom:4.5rem}
+.gitem .slot{opacity:0;clip-path:inset(0 100% 0 0);transition:clip-path 1.1s var(--ease),opacity .6s}
+.gitem:nth-child(even) .slot{order:2;clip-path:inset(0 0 0 100%)}
+.gitem.in .slot{opacity:1;clip-path:inset(0)}
+.gitem .slot img{max-height:68vh;object-fit:contain;margin:auto}
+.gtext{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:1.6rem}
+.gtext>*{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.gitem.in .gtext>*{opacity:1;transform:none}
+.gitem.in .gtext>:nth-child(1){transition-delay:.45s}.gitem.in .gtext>:nth-child(2){transition-delay:.6s}.gitem.in .gtext>:nth-child(3){transition-delay:.75s}
+.gtext small{color:var(--acc);font:600 .85rem 'Bricolage Grotesque';text-transform:uppercase;letter-spacing:.08em;display:block}
+.gtext h3{font-size:1.7rem;line-height:1.15;margin:.3rem 0 .6rem}
+.gtext p{color:var(--mute)}
+@media(max-width:760px){.gitem{grid-template-columns:1fr}.gitem:nth-child(even) .slot{order:0}}
+/* LAGU */
+.sub{font-size:1.8rem;margin:1rem 0 1.2rem}
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.track{display:flex;gap:1.1rem;align-items:center;background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:1rem;transition:.4s var(--ease)}
+.track:hover,.track.on{border-color:var(--acc);transform:translateY(-4px)}
+.track>img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none;animation:spin 8s linear infinite paused}
+.track.on>img{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tinfo{flex:1;min-width:0}.tinfo h3{font-size:1.1rem;line-height:1.2}.tinfo small{color:var(--mute)}
+.ctl{display:flex;align-items:center;gap:.6rem;margin-top:.6rem}
+.play{width:38px;height:38px;border-radius:50%;border:0;background:var(--acc);color:#fff;cursor:pointer;font-size:.8rem;flex:none;transition:.3s var(--ease)}
+.play:hover{transform:scale(1.12)}
+.seek{flex:1;min-width:0;accent-color:var(--acc)}
+.time{font:600 .72rem 'Bricolage Grotesque';color:var(--mute);white-space:nowrap}
+/* KONTAK */
+#contact{background:rgba(0,0,0,.6)}
+#contact a{color:inherit;font:600 1.4rem 'Bricolage Grotesque';text-decoration:none;display:block;padding:.4rem 0;transition:.3s var(--ease)}
+#contact a:hover{color:var(--acc);transform:translateX(12px)}
+/* EDIT */
+#tools{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;gap:.5rem;flex-wrap:wrap;justify-content:flex-end}
+#tools button{font:600 .9rem 'Bricolage Grotesque';padding:.7rem 1.1rem;border-radius:99px;border:0;background:#fff;color:#000;cursor:pointer;box-shadow:0 6px 20px #0006;transition:.3s var(--ease)}
+#tools button:hover{transform:translateY(-3px)}
+#tools button.act{background:var(--acc);color:#fff}
+body.edit [contenteditable]{outline:1.5px dashed var(--acc);outline-offset:3px;cursor:text}
+body.edit .slot,body.edit .photo{cursor:pointer;outline:3px dashed #fff8;outline-offset:-3px}
+body.edit .slot::after,body.edit .photo::after{content:"Klik untuk ganti gambar";position:absolute;inset:auto 0 0;background:#000a;color:#fff;font:600 .8rem 'Bricolage Grotesque';padding:.5rem;text-align:center}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.gitem .slot,.gtext>*{opacity:1;transform:none;clip-path:none}}
+</style>
+</head>
+<body>
+<img id="bgv" src="ruri.jpg" alt="">
+<div id="bgov"></div>
+<div id="curtain"></div>
+<nav class="ui">
+  <b><img src="logo.png" alt="Logo SMA Negeri 10 Kota Bengkulu" class="logo-nav"> <span data-e>Rifky Alexa Yoland</span></b>
+  <a href="#hero" class="on">Beranda</a><a href="#edu">Pendidikan</a><a href="#gaya">Gaya</a><a href="#contact" class="keep">Kontak</a>
+</nav>
+
+<!-- ============ 1. BERANDA ============ -->
+<section id="hero">
+  <div class="photo" data-media><img src="foto.jpg" alt="Foto Rifky Alexa Yoland"></div>
+  <div class="hero-t">
+    <h1><span><i data-e>Rifky Alexa</i></span><span><i data-e>Yoland</i></span></h1>
+    <img src="logo.png" alt="Logo SMA Negeri 10 Kota Bengkulu" class="logo-hero">
+    <p data-e>Siswa SMA Negeri 10 Kota Bengkulu · siswa aja</p>
+    <p data-e>lahir tanggal 26 november(tar lagi tua wir seumur hidup)</p>
+    <div class="btns"><a class="btn" href="#contact">Hubungi saya</a></div>
+  </div>
+</section>
+
+<!-- ============ 2. PENDIDIKAN ============ -->
+<section id="edu"><div class="wrap">
+  <h2 class="rv u" data-e>Pendidikan</h2>
+  <div class="tl">
+    <article class="rv u d1"><small data-e>2023 – 2026</small><h3 data-e>Negeri 10 Kota Bengkulu</h3><p data-e>IPA(biologo,fisika,kimia,MM tingkat lanjut)?</p></article>
+    <article class="rv u d2"><small data-e>2020 – 2023</small><h3 data-e>SMP N 05 kota bengkulu</h3><p data-e>mineralogi(yang tau/rencan)masih mereng ke bahasa</p></article>
+  </div>
+</div></section>
+
+<!-- ============ 3. GAYA ============ -->
+<section id="gaya"><div class="wrap">
+  <h2 class="rv r" data-e>Gaya</h2>
+
+  <!-- Tiap blok = gambar + kolom keterangan. Salin satu blok <div class="gitem"> untuk menambah. -->
+  <div class="gitem">
+    <div class="slot" data-media><img src="oep.webp" alt="Poster anime Violet Evergarden"></div>
+    <div class="gtext"><small data-e>Anime favorit</small><h3 data-e>Violet Evergarden</h3><p data-e>prajurit dan </p></div>
+  </div>
+  <div class="gitem">
+    <div class="slot" data-media><img src="smp.jpg" alt="Foto bersama teman sekelas saat SMP"></div>
+    <div class="gtext"><small data-e>Kenangan</small><h3 data-e>Masa SMP</h3><p data-e>Foto bersama teman sekelas di SMP. Ceritakan kenangan atau momen yang paling berkesan.</p></div>
+  </div>
+  <div class="gitem">
+    <div class="slot" data-media><img src="infj.jpg" alt="Ilustrasi chibi bertuliskan INFJ"></div>
+    <div class="gtext"><small data-e>Kepribadian</small><h3 data-e>INFJ</h3><p data-e>Tulis sifat-sifat yang menurutmu paling menggambarkan dirimu.</p></div>
+  </div>
+  <div class="gitem">
+    <div class="slot" data-media><img src="gbuk.jpg" alt="Sampul buku Teruslah Bodoh Jangan Pintar karya Tere Liye"></div>
+    <div class="gtext"><small data-e>Buku favorit</small><h3 data-e>Teruslah Bodoh Jangan Pintar</h3><p data-e>Karya Tere Liye. Tulis kesan atau pelajaran yang kamu dapat dari buku ini.</p></div>
+  </div>
+  <div class="gitem">
+    <div class="slot" data-media><img src="cos.jpeg" alt="Foto di acara cosplay dan action figure"></div>
+    <div class="gtext"><small data-e>Hobi</small><h3 data-e>Acara cosplay &amp; figure</h3><p data-e>Ceritakan pengalamanmu di acara ini dan hal yang kamu suka dari hobimu.</p></div>
+  </div>
+
+  <h3 class="sub rv u" data-e>Lagu favorit</h3>
+  <div class="tracks">
+    <div class="track rv u d1">
+      <img src="lagus.webp" alt="Sampul lagu Escaping Gravity">
+      <div class="tinfo"><h3 data-e>Escaping Gravity [Chapter 3]</h3><small data-e>TheFatRat &amp; Cecilia Gault</small>
+        <div class="ctl"><button class="play" aria-label="Putar">▶</button><input type="range" class="seek" min="0" max="100" value="0" step=".1" aria-label="Posisi lagu"><span class="time">0:00</span></div></div>
+      <audio src="lagu-escaping-gravity.mp3" preload="metadata"></audio>
+    </div>
+    <div class="track rv u d2">
+      <img src="lague.jpg" alt="Sampul lagu Nancy Mulligan">
+      <div class="tinfo"><h3 data-e>Nancy Mulligan [Official Audio]</h3><small data-e>Ed Sheeran</small>
+        <div class="ctl"><button class="play" aria-label="Putar">▶</button><input type="range" class="seek" min="0" max="100" value="0" step=".1" aria-label="Posisi lagu"><span class="time">0:00</span></div></div>
+      <audio src="lagu-nancy-mulligan.mp3" preload="metadata"></audio>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ 4. KONTAK ============ -->
+<section id="contact"><div class="wrap">
+  <h2 class="rv u" data-e>gabut</h2>
+  <div class="rv l d1"><a href="mailto:ultragelf@gmail.com" data-e>gmail.elf</a></div>
+  <div class="rv l d2"><a href="https://wa.me/+628995960769" data-e>WhatsApp: 08995960759</a></div>
+  <div class="rv l d4"><a data-e>Bengkulu, Indonesia</a></div>
+</div></section>
+
+<div id="tools" class="ui">
+  <button id="bgBtn" hidden>Ganti gambar latar</button>
+  <button id="editBtn">Edit</button>
+  <button id="saveBtn" hidden>Simpan file</button>
+</div>
+<input type="file" id="picker" hidden>
+
+<script>
+(()=>{
+const $=(s,r=document)=>[...r.querySelectorAll(s)];
+// Animasi masuk saat di-scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.2});
+$('.rv,.tl article,.gitem').forEach(el=>io.observe(el));
+// Menu aktif + tirai
+const links=$('nav a'),curtain=document.getElementById('curtain');
+$('section').forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{threshold:.5}).observe(s));
+$('a[href^="#"]').forEach(a=>a.addEventListener('click',ev=>{
+  ev.preventDefault();const t=document.querySelector(a.hash);if(!t)return;
+  curtain.classList.remove('go');void curtain.offsetWidth;curtain.classList.add('go');
+  setTimeout(()=>{document.documentElement.style.scrollBehavior='auto';t.scrollIntoView();document.documentElement.style.scrollBehavior=''},450);
+}));
+// Pemutar lagu
+const fmt=s=>isFinite(s)?Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0'):'0:00';
+$('.track').forEach(t=>{
+  const a=t.querySelector('audio'),b=t.querySelector('.play'),r=t.querySelector('.seek'),tm=t.querySelector('.time');
+  b.onclick=()=>{if(a.paused){$('audio').forEach(x=>x!==a&&x.pause());a.play()}else a.pause()};
+  a.onplay=()=>{b.textContent='❚❚';b.setAttribute('aria-label','Jeda');t.classList.add('on')};
+  a.onpause=()=>{b.textContent='▶';b.setAttribute('aria-label','Putar');t.classList.remove('on')};
+  a.ontimeupdate=a.onloadedmetadata=()=>{r.value=a.duration?a.currentTime/a.duration*100:0;tm.textContent=fmt(a.currentTime)+' / '+fmt(a.duration)};
+  r.oninput=()=>{if(a.duration)a.currentTime=r.value/100*a.duration};
+});
+// Mode edit
+const body=document.body,editBtn=document.getElementById('editBtn'),saveBtn=document.getElementById('saveBtn'),bgBtn=document.getElementById('bgBtn'),picker=document.getElementById('picker'),bg=document.getElementById('bgv');
+let target=null;
+editBtn.onclick=()=>{
+  const on=body.classList.toggle('edit');
+  editBtn.textContent=on?'Selesai':'Edit';editBtn.classList.toggle('act',on);saveBtn.hidden=bgBtn.hidden=!on;
+  $('[data-e]').forEach(el=>on?el.setAttribute('contenteditable','true'):el.removeAttribute('contenteditable'));
+};
+$('[data-media]').forEach(box=>box.addEventListener('click',()=>{if(body.classList.contains('edit')){target=box;picker.accept='image/*';picker.click()}}));
+bgBtn.onclick=()=>{target='bg';picker.accept='image/*';picker.click()};
+picker.onchange=()=>{
+  const f=picker.files[0];if(!f||!target)return;
+  const r=new FileReader();
+  r.onload=()=>{
+    if(target==='bg'){bg.src=r.result}
+    else{const el=document.createElement('img');el.src=r.result;el.alt='Gambar';target.querySelector('img').replaceWith(el)}
+    picker.value='';
+  };
+  r.readAsDataURL(f);
+};
+// Simpan versi terbaru
+saveBtn.onclick=()=>{
+  if(body.classList.contains('edit'))editBtn.click();
+  $('.rv,.gitem,.tl article').forEach(e=>e.classList.add('in'));
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(['<!DOCTYPE html>\n'+document.documentElement.outerHTML],{type:'text/html'}));
+  a.download='cv-rifky-alexa-yoland-edit.html';a.click();
+};
+})();
+</script>
+</body>
+</html>
